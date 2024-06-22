@@ -1,1 +1,7 @@
 node_modules
+/.angular/cache
+/out-tsc/*
+/dist
+
+/e2e/*.js
+/e2e/*.map
