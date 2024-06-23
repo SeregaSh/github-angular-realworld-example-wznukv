@@ -1,32 +1,25 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './features/home/home.component';
+import { AuthComponent } from './features/auth/auth.component';
 
 const routes: Routes = [
   {
-    path: 'settings',
-    loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule),
+    path: '',
+    component: HomeComponent,
   },
   {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule),
+    path: 'login',
+    component: AuthComponent,
   },
   {
-    path: 'editor',
-    loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule),
-  },
-  {
-    path: 'article',
-    loadChildren: () => import('./article/article.module').then(m => m.ArticleModule),
+    path: 'register',
+    component: AuthComponent,
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    // preload all modules; optionally we could
-    // implement a custom preloading strategy for just some
-    // of the modules (PRs welcome 😉)
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

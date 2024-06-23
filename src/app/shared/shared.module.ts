@@ -4,10 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { ArticleListComponent, ArticleMetaComponent, ArticlePreviewComponent } from './article-helpers';
-import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
-import { ListErrorsComponent } from './list-errors.component';
-import { ShowAuthedDirective } from './show-authed.directive';
+import { ArticleListComponent, ArticleMetaComponent, ArticlePreviewComponent, FavoriteButtonComponent, 
+  FollowButtonComponent, ListErrorsComponent, ArticleCommentComponent, ArticleComponent, FooterComponent,
+  HeaderComponent } from './components';
+
+import { UserService, ApiService, ArticlesService, AuthGuard, CommentsService, JwtService, ProfilesService, TagsService } from './services';
+import { ShowAuthedDirective } from './directives';
+import { MarkdownPipe } from './pipes';
 
 @NgModule({
   imports: [
@@ -15,7 +18,17 @@ import { ShowAuthedDirective } from './show-authed.directive';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+  ],
+  providers: [
+    UserService, 
+    ApiService, 
+    ArticlesService, 
+    AuthGuard, 
+    CommentsService, 
+    JwtService, 
+    ProfilesService, 
+    TagsService
   ],
   declarations: [
     ArticleListComponent,
@@ -24,21 +37,31 @@ import { ShowAuthedDirective } from './show-authed.directive';
     FavoriteButtonComponent,
     FollowButtonComponent,
     ListErrorsComponent,
-    ShowAuthedDirective
+    ArticleCommentComponent,
+    ArticleComponent,
+    ShowAuthedDirective,
+    FooterComponent,
+    HeaderComponent,
+    MarkdownPipe,
   ],
   exports: [
-    ArticleListComponent,
-    ArticleMetaComponent,
-    ArticlePreviewComponent,
     CommonModule,
-    FavoriteButtonComponent,
-    FollowButtonComponent,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ListErrorsComponent,
     RouterModule,
-    ShowAuthedDirective
+    ArticleListComponent,
+    ArticleMetaComponent,
+    ArticlePreviewComponent,
+    FavoriteButtonComponent,
+    FollowButtonComponent,
+    ListErrorsComponent,
+    ArticleCommentComponent,
+    ArticleComponent,
+    ShowAuthedDirective,
+    FooterComponent,
+    HeaderComponent,
+    MarkdownPipe,
   ]
 })
 export class SharedModule {}

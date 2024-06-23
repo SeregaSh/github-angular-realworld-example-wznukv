@@ -33,3 +33,5 @@ Another way was to switch to the commit in the original repo, but I choosed the 
  - got an error related to loadChildren, replaced strings with the functions (dynamic imports);
 10. Ran command `ng update @angular/core@14 @angular/cli@14`;
 11. Ran command `ng update @angular/core@16 @angular/cli@16`;
+
+12. Made a code strucure refactoring.
