@@ -12,3 +12,9 @@ export interface Article {
   favoritesCount: number;
   author: Profile;
 }
+
+
+export interface ArticlesResponse {
+  articles: Article[],
+  articlesCount: number,
+}
