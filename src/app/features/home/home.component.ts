@@ -1,7 +1,8 @@
 import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ArticleListConfig, SharedModule, TagsService, UserService } from '../../shared';
+import { ArticleListConfig, SharedModule, TagsService } from '../../shared';
+import { UserService } from '../../core/services';
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 
 @Component({

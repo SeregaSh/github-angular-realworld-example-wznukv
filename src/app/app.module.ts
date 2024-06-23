@@ -6,11 +6,16 @@ import {
 } from './shared';
 import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpTokenInterceptor } from './shared/interceptors';
+import { HttpTokenInterceptor } from './core/interceptors/http.token.interceptor';
+
+import { UserService, JwtService } from './core/services';
+import { HeaderComponent, FooterComponent } from './core/components'; 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +24,8 @@ import { HttpTokenInterceptor } from './shared/interceptors';
   ],
   bootstrap: [AppComponent],
   providers: [
+    UserService,
+    JwtService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpTokenInterceptor,

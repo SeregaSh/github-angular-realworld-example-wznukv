@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit, OnDestroy } from '@angular/core';
 
-import { Comment, User, UserService } from '../../index';
+import { Comment, User } from '../../index';
+import { UserService } from '../../../core/services';
 import { Subscription } from 'rxjs';
 
 @Component({

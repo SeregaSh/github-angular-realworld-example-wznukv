@@ -3,7 +3,7 @@ import { environment } from '../../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { JwtService } from './jwt.service';
+import { JwtService } from '../../core/services/jwt.service';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 

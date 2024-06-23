@@ -5,10 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { ArticleListComponent, ArticleMetaComponent, ArticlePreviewComponent, FavoriteButtonComponent, 
-  FollowButtonComponent, ListErrorsComponent, ArticleCommentComponent, ArticleComponent, FooterComponent,
-  HeaderComponent } from './components';
+  FollowButtonComponent, ListErrorsComponent, ArticleCommentComponent, ArticleComponent } from './components';
 
-import { UserService, ApiService, ArticlesService, CommentsService, JwtService, TagsService, ProfilesService } from './services';
+import { ArticlesService, CommentsService, TagsService, ProfilesService, ApiService } from './services';
 import { ShowAuthedDirective } from './directives';
 import { MarkdownPipe } from './pipes';
 
@@ -21,13 +20,11 @@ import { MarkdownPipe } from './pipes';
     RouterModule,
   ],
   providers: [
-    UserService, 
-    ApiService, 
     ArticlesService,
-    CommentsService, 
-    JwtService,
+    CommentsService,
     ProfilesService,
-    TagsService
+    TagsService,
+    ApiService
   ],
   declarations: [
     ArticleListComponent,
@@ -39,8 +36,6 @@ import { MarkdownPipe } from './pipes';
     ArticleCommentComponent,
     ArticleComponent,
     ShowAuthedDirective,
-    FooterComponent,
-    HeaderComponent,
     MarkdownPipe,
   ],
   exports: [
@@ -58,8 +53,6 @@ import { MarkdownPipe } from './pipes';
     ArticleCommentComponent,
     ArticleComponent,
     ShowAuthedDirective,
-    FooterComponent,
-    HeaderComponent,
     MarkdownPipe,
   ]
 })

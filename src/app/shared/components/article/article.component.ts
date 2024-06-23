@@ -8,8 +8,9 @@ import {
   Comment,
   CommentsService,
   User,
-  UserService
-} from '../..';
+} from '../../../shared';
+
+import { UserService } from '../../../core/services';
 
 @Component({
   selector: 'app-article-page',

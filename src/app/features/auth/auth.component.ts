@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Errors, SharedModule, UserService } from '../../shared';
+import { Errors, SharedModule } from '../../shared';
+import { UserService } from '../../core/services';
 
 @Component({
   selector: 'app-auth-page',
