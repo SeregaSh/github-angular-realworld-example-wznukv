@@ -17,6 +17,12 @@
       "ES2022",
       "dom"
     ],
+    "paths": {
+      "@services": [ "./src/app/core/services" ],
+      "@services/*": [ "./src/app/core/services/*" ],
+      "@shared": [ "./src/app/shared" ],
+      "@shared/*": [ "./src/app/shared/*" ],
+    },
     "importHelpers": true,
     "useDefineForClassFields": false
   }

@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import {
   SharedModule
 } from './shared';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './core/routings/app-routing.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpTokenInterceptor } from './core/interceptors/http.token.interceptor';
 
