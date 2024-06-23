@@ -8,7 +8,7 @@ import { ArticleListComponent, ArticleMetaComponent, ArticlePreviewComponent, Fa
   FollowButtonComponent, ListErrorsComponent, ArticleCommentComponent, ArticleComponent, FooterComponent,
   HeaderComponent } from './components';
 
-import { UserService, ApiService, ArticlesService, AuthGuard, CommentsService, JwtService, ProfilesService, TagsService } from './services';
+import { UserService, ApiService, ArticlesService, CommentsService, JwtService, TagsService, ProfilesService } from './services';
 import { ShowAuthedDirective } from './directives';
 import { MarkdownPipe } from './pipes';
 
@@ -23,11 +23,10 @@ import { MarkdownPipe } from './pipes';
   providers: [
     UserService, 
     ApiService, 
-    ArticlesService, 
-    AuthGuard, 
+    ArticlesService,
     CommentsService, 
-    JwtService, 
-    ProfilesService, 
+    JwtService,
+    ProfilesService,
     TagsService
   ],
   declarations: [

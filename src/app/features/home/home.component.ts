@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ArticleListConfig, SharedModule, TagsService, UserService } from '../../shared';
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-home-page',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
     private tagsService: TagsService,
     private userService: UserService
   ) {}
+  destroyRef = inject(DestroyRef);
 
   isAuthenticated: boolean;
   listConfig: ArticleListConfig = {
@@ -26,7 +28,7 @@ export class HomeComponent implements OnInit {
   tagsLoaded = false;
 
   ngOnInit() {
-    this.userService.isAuthenticated.subscribe(
+    this.userService.isAuthenticated.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(
       (authenticated) => {
         this.isAuthenticated = authenticated;
 
